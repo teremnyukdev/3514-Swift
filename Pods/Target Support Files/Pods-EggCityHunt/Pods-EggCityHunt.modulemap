@@ -1,4 +1,4 @@
-framework module Pods_EggCityHunt {
+module Pods_EggCityHunt {
   umbrella header "Pods-EggCityHunt-umbrella.h"
 
   export *

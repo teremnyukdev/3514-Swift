@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct EggCityHuntApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
-            ECLaunchView()
+            AppEntryPoint()
         }
     }
 }
