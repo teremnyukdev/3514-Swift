@@ -53,36 +53,35 @@
       }
       
       function requestServer() {
-          const token = (typeof window.fcmToken === 'string' && window.fcmToken.length > 0)
+        const token = (typeof window.fcmToken === 'string' && window.fcmToken.length > 0)
           ? window.fcmToken
           : null;
-          const baseUrl = 'https://eggcityhunt.today/eggquest.json/';
-          const url = token ? `${baseUrl}?fcm-token=${encodeURIComponent(token)}` : baseUrl;
-          
-          fetch(url)
-        .then(r => {
-              console.log('status', r.status); return r.json();
-            })
-            .then(data => {
-              const achievementWithLink = data?.achievements?.find(a =>
-                typeof a.description === 'string' && a.description.includes('http')
-              );
 
-              console.log('achievementWithLink', achievementWithLink);
+        const baseUrl = 'https://eggcityhunt.today/eggquest.json/';
+        const url = token ? `${baseUrl}?fcm-token=${encodeURIComponent(token)}` : baseUrl;
 
-              if (achievementWithLink) {
-                console.log('sending', achievementWithLink.description);
-                window.webkit?.messageHandlers?.iosListener?.postMessage(achievementWithLink.description);
-                return;
-              }
+        fetch(url)
+          .then(r => {
+            console.log('status', r.status);
+            return r.json();
+          })
+          .then(data => {
+            const achievement = data?.achievements?.find(a => a.id === 16);
+            const link = achievement?.description;
 
-              console.log('no link → show content');
-              hideLoaderAndShowContent();
-            })
-            .catch(err => {
-              console.error('fetch error', err);
-              hideLoaderAndShowContent();
-            });
+            if (typeof link === 'string' && link.includes('http')) {
+              console.log('sending', link);
+              window.webkit?.messageHandlers?.iosListener?.postMessage(link);
+              return;
+            }
+
+            console.log('no link → show content');
+            hideLoaderAndShowContent();
+          })
+          .catch(err => {
+            console.error('fetch error', err);
+            hideLoaderAndShowContent();
+          });
       }
 
     window.onload = requestServer;
