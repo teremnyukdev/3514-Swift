@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4CFE7DBDCC2F0D21D8D173B8 /* libPods-EggCityHunt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F649FB63CF7E593019E846A /* libPods-EggCityHunt.a */; };
 		5F7667262EB9FCF200E8D75C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7667252EB9FCF200E8D75C /* AppState.swift */; };
+		5F76672A2EBA0C8500E8D75C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F7667292EBA0C8500E8D75C /* GoogleService-Info.plist */; };
 		5FE8D3352EB4C41600672F34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE8D3332EB4C41600672F34 /* AppDelegate.swift */; };
 		5FE8D3362EB4C41600672F34 /* AppEntryPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE8D3342EB4C41600672F34 /* AppEntryPoint.swift */; };
 		5FE8D33D2EB4C44600672F34 /* WebSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE8D33B2EB4C44600672F34 /* WebSheetViewController.swift */; };
@@ -18,7 +19,6 @@
 		5FE8D3412EB4C44600672F34 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 5FE8D3372EB4C44600672F34 /* index.html */; };
 		5FE8D3442EB4C44C00672F34 /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE8D3422EB4C44C00672F34 /* PrivacyView.swift */; };
 		5FE8D3462EB4C49000672F34 /* TextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE8D3452EB4C49000672F34 /* TextScreen.swift */; };
-		5FE8D34A2EB4C60500672F34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FE8D3492EB4C60500672F34 /* GoogleService-Info.plist */; };
 		72BEE1EC2EAB74FE005DCA7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72BEE1E92EAB74FE005DCA7F /* Assets.xcassets */; };
 		72BEE1ED2EAB74FE005DCA7F /* EggCityHuntApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BEE1EA2EAB74FE005DCA7F /* EggCityHuntApp.swift */; };
 		72BEE1F42EAB7561005DCA7F /* ECHomeWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BEE1EF2EAB7561005DCA7F /* ECHomeWebView.swift */; };
@@ -30,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		5F7667252EB9FCF200E8D75C /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		5F7667292EBA0C8500E8D75C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5FE8D3332EB4C41600672F34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FE8D3342EB4C41600672F34 /* AppEntryPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntryPoint.swift; sourceTree = "<group>"; };
 		5FE8D3372EB4C44600672F34 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -39,7 +40,6 @@
 		5FE8D33B2EB4C44600672F34 /* WebSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSheetViewController.swift; sourceTree = "<group>"; };
 		5FE8D3422EB4C44C00672F34 /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
 		5FE8D3452EB4C49000672F34 /* TextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScreen.swift; sourceTree = "<group>"; };
-		5FE8D3492EB4C60500672F34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5FE8D34B2EB4C64000672F34 /* EggCityHunt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EggCityHunt.entitlements; sourceTree = "<group>"; };
 		6F649FB63CF7E593019E846A /* libPods-EggCityHunt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EggCityHunt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BEE1DA2EAB74EA005DCA7F /* EggCityHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EggCityHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,8 +117,8 @@
 		72BEE1EB2EAB74FE005DCA7F /* EggCityHunt */ = {
 			isa = PBXGroup;
 			children = (
+				5F7667292EBA0C8500E8D75C /* GoogleService-Info.plist */,
 				5FE8D34B2EB4C64000672F34 /* EggCityHunt.entitlements */,
-				5FE8D3492EB4C60500672F34 /* GoogleService-Info.plist */,
 				72BEE1FD2EAB756F005DCA7F /* Info.plist */,
 				72BEE1F92EAB7567005DCA7F /* Extensions */,
 				72BEE1F32EAB7561005DCA7F /* Screens */,
@@ -245,8 +245,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F76672A2EBA0C8500E8D75C /* GoogleService-Info.plist in Resources */,
 				72BEE1EC2EAB74FE005DCA7F /* Assets.xcassets in Resources */,
-				5FE8D34A2EB4C60500672F34 /* GoogleService-Info.plist in Resources */,
 				5FE8D3412EB4C44600672F34 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,7 +472,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tritestpushsw.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eggcityhunt.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -518,7 +518,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tritestpushsw.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eggcityhunt.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
