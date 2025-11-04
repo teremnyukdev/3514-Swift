@@ -5,11 +5,11 @@ struct PrivacyView: View {
     @AppStorage("firstOpenApp") var firstOpenApp = true
     @AppStorage("stringURL") var stringURL = ""
 
-    @State private var showHome = false
+    @EnvironmentObject var appState: AppState
     @State private var isContentLoaded = false
     
     var screenType: TypeScreen = .policy
-    
+
     var body: some View {
         VStack {
             if isContentLoaded && stringURL.isEmpty {
@@ -42,13 +42,6 @@ struct PrivacyView: View {
                     )
                 )
             }
-            
-            NavigationLink(
-                destination: ECHomeWebView(),
-                isActive: $showHome
-            ) {
-                EmptyView()
-            }
         }
         .background(
             LinearGradient(
@@ -64,16 +57,16 @@ struct PrivacyView: View {
         )
         .onChange(of: stringURL) { newValue in
             if stringURL == "error" {
-                showHome = true
+                appState.goHome()
             }
         }
         .hideNavigationBar()
         .onAppear {
+            // Allow both portrait and landscape while the privacy screen is visible.
+            // Avoid forcing device orientation values (UIDevice.setValue) because that can
+            // create snapshot/presentation artifacts (a small leftover of the previous view).
             AppDelegate.orientationLock = [.portrait, .landscapeLeft, .landscapeRight]
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                UIDevice.current.setValue(UIInterfaceOrientation.unknown.rawValue, forKey: "orientation")
-                UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
                 UIViewController.attemptRotationToDeviceOrientation()
             }
         }
@@ -88,7 +81,7 @@ extension PrivacyView {
         HStack {
             Button {
                 firstOpenApp = false
-                showHome = true
+                appState.goHome()
             } label: {
                 Text("Agree".uppercased())
                     .padding(.vertical, 10)
@@ -130,4 +123,5 @@ extension PrivacyView {
 
 #Preview {
     PrivacyView()
+        .environmentObject(AppState())
 }

@@ -4,37 +4,25 @@ struct AppEntryPoint: View {
     @AppStorage("stringURL") var stringURL = ""
     @AppStorage("firstOpenApp") var firstOpenApp = true
 
-    @State private var selectedRoute: Route?
-
-    enum Route {
-        case launch, privacy
-    }
+    @EnvironmentObject var appState: AppState
 
     var body: some View {
         ZStack {
             Group {
-                switch selectedRoute {
+                switch appState.route {
                 case .privacy:
                     PrivacyView()
                 case .launch:
                     ECLaunchView()
-                case .none:
-                    Color.clear
+                case .home:
+                    ECHomeWebView()
                 }
             }
             .transition(.opacity)
-            .animation(.easeInOut(duration: 0.3), value: selectedRoute)
+            .animation(.easeInOut(duration: 0.3), value: appState.route)
         }
         .onAppear(perform: {
-            DispatchQueue.main.async {
-                if !stringURL.isEmpty {
-                    AppDelegate.orientationLock = [.portrait, .landscapeLeft, .landscapeRight]
-                    selectedRoute = .privacy
-                } else {
-                    AppDelegate.orientationLock = .portrait
-                    selectedRoute = .launch
-                }
-            }
+            // AppState already configured initial route in its init; nothing else required here
         })
     }
 }

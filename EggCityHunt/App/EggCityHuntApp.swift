@@ -11,10 +11,12 @@ import SwiftUI
 struct EggCityHuntApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject private var appState = AppState()
     
     var body: some Scene {
         WindowGroup {
             AppEntryPoint()
+                .environmentObject(appState)
         }
     }
 }

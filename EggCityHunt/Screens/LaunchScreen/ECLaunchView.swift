@@ -6,8 +6,7 @@ struct ECLaunchView: View {
     @AppStorage("stringURL") var stringURL = ""
     
     @State private var pushAnswered = false
-    @State private var showPrivacy = false
-    @State private var showHome = false
+    @EnvironmentObject var appState: AppState
     @State private var minSplashDone = false
     @State private var fired = false
     @State private var minTimer: DispatchWorkItem?
@@ -27,8 +26,6 @@ struct ECLaunchView: View {
             VStack {
                 Spacer()
                 loader
-                NavigationLink(destination: PrivacyView(), isActive: $showPrivacy) { EmptyView() }
-                NavigationLink(destination: ECHomeWebView(), isActive: $showHome) { EmptyView() }
             }
             .padding()
             .frame(maxWidth: .infinity)
@@ -42,6 +39,7 @@ struct ECLaunchView: View {
                         .ignoresSafeArea()
                 }
             )
+            // Navigation handled by AppState; ECLaunchView does not present PrivacyView itself
             .navigationViewStyle(StackNavigationViewStyle())
             .hideNavigationBar()
             .onAppear {
@@ -111,14 +109,12 @@ struct ECLaunchView: View {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + postConsentDelay) {
             if !stringURL.isEmpty || firstOpenApp {
-                AppDelegate.orientationLock = [.portrait, .landscapeLeft, .landscapeRight]
-                showPrivacy = true
-            } else {
-                AppDelegate.orientationLock = .portrait
-                showHome = true
-            }
-        }
-    }
+                appState.goPrivacy()
+             } else {
+                appState.goHome()
+             }
+         }
+     }
 }
 
 // MARK: - Loader

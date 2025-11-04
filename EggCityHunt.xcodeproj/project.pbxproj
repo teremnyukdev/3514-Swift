@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4CFE7DBDCC2F0D21D8D173B8 /* libPods-EggCityHunt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F649FB63CF7E593019E846A /* libPods-EggCityHunt.a */; };
+		5F7667262EB9FCF200E8D75C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7667252EB9FCF200E8D75C /* AppState.swift */; };
 		5FE8D3352EB4C41600672F34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE8D3332EB4C41600672F34 /* AppDelegate.swift */; };
 		5FE8D3362EB4C41600672F34 /* AppEntryPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE8D3342EB4C41600672F34 /* AppEntryPoint.swift */; };
 		5FE8D33D2EB4C44600672F34 /* WebSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE8D33B2EB4C44600672F34 /* WebSheetViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F7667252EB9FCF200E8D75C /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		5FE8D3332EB4C41600672F34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FE8D3342EB4C41600672F34 /* AppEntryPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntryPoint.swift; sourceTree = "<group>"; };
 		5FE8D3372EB4C44600672F34 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				5FE8D3332EB4C41600672F34 /* AppDelegate.swift */,
 				5FE8D3342EB4C41600672F34 /* AppEntryPoint.swift */,
 				72BEE1EA2EAB74FE005DCA7F /* EggCityHuntApp.swift */,
+				5F7667252EB9FCF200E8D75C /* AppState.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				5FE8D33F2EB4C44600672F34 /* WebViewContainer.swift in Sources */,
 				5FE8D3402EB4C44600672F34 /* UserAgentBuilder.swift in Sources */,
 				72BEE1FA2EAB7567005DCA7F /* ShapeStyle+Extensions.swift in Sources */,
+				5F7667262EB9FCF200E8D75C /* AppState.swift in Sources */,
 				72BEE1FB2EAB7567005DCA7F /* View+Extensions.swift in Sources */,
 				72BEE1FC2EAB7567005DCA7F /* Color+Extensions.swift in Sources */,
 				5FE8D3462EB4C49000672F34 /* TextScreen.swift in Sources */,
